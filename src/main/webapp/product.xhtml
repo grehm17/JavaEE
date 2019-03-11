@@ -1,0 +1,42 @@
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+
+</h:head>
+
+<h:body>
+    <h:form>
+        <p>
+            <h:outputLabel for="id-id">id:</h:outputLabel>
+            <h:inputText id="id-id" value="#{products.id}" validatorMessage="Id не должен быть равен нулю">
+                <f:validateDoubleRange minimum="1"/>
+            </h:inputText>
+            <h:message for="id-id" class="error" />
+
+        </p>
+        <p>
+            <h:outputLabel for="name-id">name:</h:outputLabel>
+            <h:inputText id="name-id" value="#{products.name}" validatorMessage="Строка не должна быть пустой">
+                <f:validateRequired />
+            </h:inputText>
+            <h:message for="name-id" class="error" />
+        </p>
+        <p>
+            <h:outputLabel for="cost-id">cost:</h:outputLabel>
+            <h:inputText id="cost-id" value="#{products.cost}" validatorMessage="Цена должна быть от 0.1">
+                <f:validateDoubleRange minimum="0.1"/>
+            </h:inputText>
+            <h:message for="cost-id" class="error" />
+        </p>
+        <p>
+            <h:outputLabel for="description-id">description:</h:outputLabel>
+            <h:inputText id="description-id" value="#{products.description}" />
+            <h:message for="description-id" class="error" />
+        </p>
+        <h:commandButton value="Save" action="#{products.saveProduct}"/>
+    </h:form>
+</h:body>
+
+</html>

@@ -1,0 +1,33 @@
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+
+</h:head>
+
+<h:body>
+    <h:form>
+        <p>
+            <h:outputLabel for="id-id">id:</h:outputLabel>
+            <h:inputText id="id-id" value="#{orders.id}" disabled="true"/>
+            <h:message for="id-id" class="error" />
+
+        </p>
+        <p>
+            <h:outputLabel for="number-id">number:</h:outputLabel>
+            <h:inputText id="number-id" value="#{orders.number}" disabled="true"/>
+            <h:message for="number-id" class="error" />
+        </p>
+        <p>
+            <h:outputLabel for="status-id">status:</h:outputLabel>
+            <h:inputText id="status-id" value="#{orders.status}" validatorMessage="Строка не должна быть пустой">
+                <f:validateRequired />
+            </h:inputText>
+            <h:message for="status-id" class="error" />
+        </p>
+        <h:commandButton value="Save" action="#{orders.saveOrder}"/>
+    </h:form>
+</h:body>
+
+</html>
